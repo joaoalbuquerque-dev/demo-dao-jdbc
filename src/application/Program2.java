@@ -3,9 +3,7 @@ package application;
 import dao.DaoFactory;
 import dao.DepartmentDao;
 import entities.Department;
-import entities.Seller;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -30,6 +28,20 @@ public class Program2 {
         Department newDepartment = new Department(null, "Humanoides");
         departmentDao.insert(newDepartment);
         System.out.println("Inserted! New id = " + newDepartment.getId());
+
+        System.out.println("\n=== TEST 4: department update ====");
+        department = departmentDao.findById(7);
+        department.setName("Fitness");
+        departmentDao.update(department);
+        System.out.println("Update completed!");
+
+        System.out.println("\n=== TEST 5: department delete ====");
+        System.out.println("Enter id for delete test: ");
+        int id = sc.nextInt();
+        departmentDao.deleteById(id);
+        System.out.println("Delete completed");
+
+
         sc.close();
     }
 }

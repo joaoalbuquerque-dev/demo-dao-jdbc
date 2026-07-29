@@ -4,8 +4,6 @@ import dao.impl.DepartmentDaoJDBC;
 import dao.impl.SellerDaoJDBC;
 import db.DB;
 
-import java.sql.Connection;
-
 public class DaoFactory {
 
     public static SellerDao createSellerDao() {
